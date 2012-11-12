@@ -54,6 +54,9 @@ public class ContactAddressPluginActivity extends Activity {
 			String longitude=null;
 			if(token.countTokens()==2){
 				String temp=token.nextToken();
+				if(temp.startsWith("loc:")){
+					temp=temp.substring(4);
+				}
 				 if (temp.trim().matches("((-|\\+)?[0-9]+(\\.[0-9]+)?)+")) {  
 			            latitude=temp.trim();
 			        } 
